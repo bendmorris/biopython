@@ -1005,6 +1005,8 @@ class CladeChildren(list):
         self.node = node
 
     def __repr__(self): return list.__repr__(self)
+    
+    def __iadd__(self, x): self.extend(x)
 
     def del_parent(self, x):
         if hasattr(x, '_parent') and x._parent == self.node:
